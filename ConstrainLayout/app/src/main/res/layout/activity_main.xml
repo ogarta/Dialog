@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textViewA"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="A"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:background="#F44336"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <TextView
+        android:id="@+id/textViewB"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="B"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:background="#00BCD4"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toStartOf="@id/textViewA"
+        app:layout_constraintTop_toBottomOf="@id/textViewA"/>
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="end"
+        app:constraint_referenced_ids="textViewA,textViewB"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ahihi"
+        android:textSize="40sp"
+        android:layout_marginStart="50dp"
+        app:layout_constraintStart_toStartOf="@id/barrier"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
